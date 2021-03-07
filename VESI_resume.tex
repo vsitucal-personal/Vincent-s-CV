@@ -1,0 +1,178 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{graphicx}
+\usepackage{marvosym}
+\usepackage{amsmath}
+
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{35mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+%WATERMARK TEST [**not part of a CV**]---------------
+%\font\wm=''Baskerville:color=787878'' at 8pt
+%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
+%{\wm 
+%	\begin{textblock}{1}(0,0)
+%		\rotatebox{-90}{\parbox{500mm}{
+%			Typeset by Alessandro Plasmati with \XeTeX\  \today\ for 
+%			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
+%		}
+%	}
+%	\end{textblock}
+%}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+%\par{\centering
+%		{\Huge Vincent Errick S. \textsc{Itucal}
+%	}\bigskip\par} 
+	\begin{flushleft}
+	{\Large \textsc{Vincent Errick S. Itucal}}
+	%\hfill
+	%\includegraphics[width=2cm]{toga1.png}
+	\end{flushleft}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+\section{\normalsize Personal Data}
+\begin{tabular}{rl}
+    \textsc{\footnotesize Place and Date of Birth:} & \footnotesize San Juan, Metro Manila | 18 September 1996 \\
+    \textsc{\footnotesize Address:}         & \footnotesize Taft Ave., Malate, Manila 1004 \\
+    \textsc{\footnotesize Phone:}           & \footnotesize +639562351168\\
+    \textsc{\footnotesize email:}           & \footnotesize                     \href{mailto:vsitucal@up.edu.ph}{vsitucal@gmail.com}\\
+                                            \textsc{\footnotesize LinkedIn}:           
+                                            &\footnotesize \href{https://www.linkedin.com/in/vitucal/}{linkedin.com/in/vitucal/}\\
+    \textsc{\footnotesize Github profile}:  & \footnotesize \href{https://github.com/vsitucal-personal}{github.com/vsitucal-personal}\\
+\end{tabular}
+
+%Section: Education
+\section{\normalsize Education}
+\begin{tabular}{rl}	
+\footnotesize 2014-2019     & \textbf{\footnotesize Bachelor of Science in Applied Physics (Health Physics)}\\ 
+                            & \footnotesize University of the Philippines Manila\\
+\footnotesize 2013-2014     & \footnotesize Bachelor of Science in Biology\\ & \footnotesize University of the Philippines Manila\\
+\footnotesize 2009-2013     & \footnotesize High School\\ 
+                            & \footnotesize Philippine Science High School\\
+
+\end{tabular}
+
+%Section: Work Experience at the top
+\section{\normalsize Work Experience}
+
+\begin{tabular}{r|p{11cm}}
+    \textsc{Sep 2019-Present} & \footnotesize \textbf{Software Developer at Chi-X Global Technology (Philippines) Inc.}\\
+    &\footnotesize{Software developer for a Smart Order Router that sends orders in the different market venues available to the Chi-X Trading System for best execution}\\
+    
+    &\footnotesize{Key roles:}\\
+    
+    &\begin{flushleft}
+    \begin{itemize}
+        \item \footnotesize{Develop and maintain trading strategies of clients based on their business logic/specifications}
+        \item \footnotesize{Develop and maintain EOD report generation of clients based on the SEC and clearing requirements}
+        \item \footnotesize{Provide design notes  and documentation on the code written in implementing the business logic for the strategies and EOD report generation}
+        \item \footnotesize{Handle bugs raised by QA team, provide investigation and replication in dev environment and provide and discuss fixes to be included in the next build. Finally provide testing notes for QA to confirm bug fix.}
+        \item \footnotesize{Perform capacity test (i.e. achieve throughput of X number of orders per second, capacity limit by loading X number of orders) on the product before deployment to ensure that the product can handle the workload done in production and simulation environments. Memory usage of JVM and GC activity is monitored when undergoing the capacity test}
+        \item \footnotesize{Provide L3 support for problems raised from production and simulation environments. These may range from investigations on why processes went down or in a failover to recovery state. Underlying causes may range from high GC activity in the process, processes that are set in sync connected via TCP/IP disconnects due to network problems and simple configuration issues (e.g. a parameter was not set correctly in the commands file) }
+    \end{itemize}
+    \end{flushleft}
+
+\\\multicolumn{2}{c}{} \\
+\textsc{Dec 2018-Feb 2019}  & \footnotesize \textbf{Internship at Radiation Oncology Section, Department of Radiology, UP-PGH}\\
+                            &\footnotesize{Acquired skills in CT scan image segmentation, and quality assurance procedures in medical linear accelerator (200 hours of OJT completed)} 
+
+\end{tabular}
+\section{\normalsize Certifications}
+\footnotesize Oracle Certified Associate, Java SE 8 Programmer (Issued Nov 2019)
+
+
+
+\section{\normalsize Technologies}
+\begin{tabular}{rp{11cm}}
+\footnotesize \textbf{Tech stack}\\
+\footnotesize Programming:      & \footnotesize \textsc{Java, Python, C, C++}\\
+\footnotesize Scripting:        & \footnotesize \textsc{shell scripting, Windows PowerShell scripting,}\\
+                                &\footnotesize \textsc{Python scripting}\\
+\footnotesize Database:         & \footnotesize \textsc{MySQL}\\
+\footnotesize Platforms:        & \footnotesize \textsc{}{Windows, Linux(CentOS, Ubuntu)}\\
+\footnotesize Version control:  & \footnotesize \textsc{Bitbucket/Github+git, SVN}\\
+\footnotesize Unit testing:     & \footnotesize \textsc{Junit, mockito, powermockito}\\
+\footnotesize Methodology:      & \footnotesize \textsc{Agile methodology, CI/CD}\\
+\footnotesize Others:           & \footnotesize \textsc{HTML, XML, JSON, UML, Financial Exchange(FIX) API/protocol, SOAP API, REST API}\\
+ 
+\end{tabular}
+
+
+%Section: Scholarships and additional info
+\section{\normalsize Seminars, trainings and conferences Attended}
+\begin{tabular}{rp{11cm}}
+	\textsc{\footnotesize Mar 28 2019}         	& \footnotesize Open Lecture on Neutron Dosimetry, Spectrometry and Monte Carlo Modeling\\
+												& \footnotesize Philippine Nuclear Research Institute\\
+	\textsc{\footnotesize May 29-Jun 1 2019}   	& \footnotesize Oral Presentation - Monte Carlo simulation of photon specific absorbed fractions for internal self-dosimetry of the thyroid based on a Filipino model\\
+												& \footnotesize \href{https://paperview.spp-online.org/proceedings/article/view/SPP-2019-3D-01}{paperview.spp-online.org/proceedings/article/view/SPP-2019-3D-01}\\
+												& \footnotesize 37th SPP Physics Conference @ Bohol
+\end{tabular}
+
+
+%Section: Online courses
+\section{\normalsize Online Courses}
+\small Udemy:\\
+\footnotesize Complete Python Scripting for Automation\\
+\footnotesize Java Network Programming - TCP/IP Socket Programming
+
+%Section: Interests and Activities
+\section{\normalsize Interests and Activities}
+\footnotesize Financial Vehicles like trading, funds and cryptocurrency\\
+\footnotesize Transforming business logic/specifications into a highly functional, scaleable and workable products\\
+\footnotesize Data Science and Statistics\\
+\footnotesize Computational Physics\\
+\footnotesize Monte Carlo radiation transport codes (MCNP6,FLUKA,PHITS)\\
+\footnotesize Health \& Medical Physics\\
+
+\end{document}
